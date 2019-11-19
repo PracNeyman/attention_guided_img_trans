@@ -223,7 +223,7 @@ for epoch in range(startEpoch, nofEpoch):
     # if not os.path.exists('./models'):
     #     os.mkdir('./models')
     if not os.path.exists('/kaggle/input/models'):
-        os.mkdir('./models')
+        os.mkdir('/kaggle/input/models')
 
     if (epoch + 1) % saveEvery == 0:
         save_checkpoint({
@@ -239,7 +239,7 @@ for epoch in range(startEpoch, nofEpoch):
             'AttnA' : AttnA.state_dict(),
             'AttnB' : AttnB.state_dict()
             }, 
-            filename='./models/checkpoint_'+str(epoch)+'.pth.tar'
+            filename='/kaggle/input/models/checkpoint_'+str(epoch)+'.pth.tar'
             )
 
     lrScheduler.step()
